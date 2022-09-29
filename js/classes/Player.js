@@ -23,6 +23,7 @@ class Player extends Sprite {
         this.sides = {
             bottom: this.position.y + this.height
         }
+        //this.jump = false // JUMP 0.1C
     }
 /*     
 draw(){

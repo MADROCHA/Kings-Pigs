@@ -22,11 +22,37 @@ window.addEventListener('keydown', (e) =>{
                     }
                 
             }
+            for (let i = 0; i < player.collisionBlocks.length; i++){
+                const collisionBlock = player.collisionBlocks[i]
             if ( 
                 player.velocity.y === 0 
+                &&
+                (player.hitBox.position.x <= collisionBlock.position.x + collisionBlock.width
+                && player.hitBox.position.x +player.hitBox.width >= collisionBlock.position.x
+                && player.hitBox.position.y + player.hitBox.height >= collisionBlock.position.y
+                && player.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height)
                 //&& player.checkForVerticalCollisions()
-                ) 
-                player.velocity.y = -14;
+                //&& player.checkForVerticalCollisions()
+                ) {
+                    
+                    player.velocity.y = -14;
+                    //keys.w.pressed = !keys.w.pressed
+                } 
+            } 
+            /* // JUMP 0.1B
+            if ( 
+                player.velocity.y === 0 
+                && !player.jump
+                //&& player.checkForVerticalCollisions()
+                //&& player.checkForVerticalCollisions()
+                ) {
+                    player.jump = true
+                    
+                    player.velocity.y = -14;
+                    //keys.w.pressed = !keys.w.pressed
+                } 
+                console.log(player.jump) */
+                
         break;
         case 'a':
             //console.log('Preesed A')
@@ -55,6 +81,8 @@ window.addEventListener('keyup', (e) =>{
         case 'w':
             //console.log('Released W')
             //if ( player.velocity.y === 0)   player.velocity.y = -20;
+            
+            //player.jump = false //JUMP 0.1B
         break;
         case 'a':
             //console.log('Released A')

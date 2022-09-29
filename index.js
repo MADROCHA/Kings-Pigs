@@ -51,7 +51,7 @@ const player = new Player({
                     onComplete: () =>{
                         
                         level++
-                        if (level === 6) {
+                        if (level === 7) {
                             level = 1
                         }
                         levels[level].init()
@@ -70,14 +70,15 @@ const player = new Player({
     },
 });
 
-let level = 5
+let level = 1   
 let levels = {
     1: {
         init: () => {
             parsedCollisions = collisionsLevel1.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks;
-
+            player.position.x = 80
+            player.position.y = 220
             if (player.currentAnimation) player.currentAnimation.isActive = false
 
             background = new Sprite({
@@ -227,6 +228,39 @@ let levels = {
             position: {
                 x:474,
                 y:338,
+            },
+            imageSrc: './img/doorOpen.png',
+            frameRate: 5,
+            frameBuffer: 5,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+        },
+    },
+    6: {
+        init: () => {
+            parsedCollisions = collisionsLevel6.parse2D()
+            collisionBlocks = parsedCollisions.createObjectsFrom2D()
+            player.collisionBlocks = collisionBlocks,
+            player.position.x = 46
+            player.position.y = 46
+    
+            if (player.currentAnimation) player.currentAnimation.isActive = false
+
+
+            background = new Sprite({
+    position: {
+        x:0,
+        y:0,
+    },
+    imageSrc: './img/backgroundLevel6.png',
+    })
+    doors = [
+        new Sprite({
+            position: {
+                x:880,
+                y:210 ,
             },
             imageSrc: './img/doorOpen.png',
             frameRate: 5,

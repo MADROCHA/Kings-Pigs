@@ -15,6 +15,7 @@ Array.prototype.createObjectsFrom2D = function (){
             if ( 
                 symbol === 292 
                 ||symbol === 250
+                
                 ) {
                 // push a new collision into collisionBlocks array
                     objects.push(
