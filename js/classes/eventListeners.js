@@ -22,7 +22,11 @@ window.addEventListener('keydown', (e) =>{
                     }
                 
             }
-            if ( player.velocity.y === 0)   player.velocity.y = -14;
+            if ( 
+                player.velocity.y === 0 
+                //&& player.checkForVerticalCollisions()
+                ) 
+                player.velocity.y = -14;
         break;
         case 'a':
             //console.log('Preesed A')

@@ -70,7 +70,7 @@ const player = new Player({
     },
 });
 
-let level = 1
+let level = 5
 let levels = {
     1: {
         init: () => {
@@ -225,8 +225,8 @@ let levels = {
     doors = [
         new Sprite({
             position: {
-                x:448,
-                y:448 - 112,
+                x:474,
+                y:338,
             },
             imageSrc: './img/doorOpen.png',
             frameRate: 5,

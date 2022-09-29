@@ -91,11 +91,17 @@ draw(){
     updateHitbox(){
         this.hitBox = {
             position:{
-                x: this.position.x + this.width * 0.40,//+58
-                y: this.position.y + this.height * 0.26,//+34
+                //x: this.position.x + this.width * 0.40,
+                //y: this.position.y + this.height * 0.26,
+                //x: this.position.x + this.width * 0.34,
+                //y: this.position.y + this.height * 0.26,
+                x: this.position.x +55,
+                y: this.position.y +32
+                //+58
+                //+34
             },
-            width: 42,
-            height: 58,    
+            width: 46,
+            height: 56,    
         }
     }
     checkForHorizontalCollisions (){
@@ -137,7 +143,7 @@ draw(){
                 && this.hitBox.position.y + this.hitBox.height >= collisionBlock.position.y
                 && this.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height
             ) {
-                // horizontal x axis collision player and sprite
+                // vertical y axis collision player and sprite
                 if (this.velocity.y < -0) {
                     this.velocity.y = 0
                     const offset = this.hitBox.position.y - this.position.y 
