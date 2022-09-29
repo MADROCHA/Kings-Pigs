@@ -70,7 +70,7 @@ const player = new Player({
     },
 });
 
-let level = 5
+let level = 1
 let levels = {
     1: {
         init: () => {
