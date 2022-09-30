@@ -35,7 +35,7 @@ let levels = {
                 x:500,
                 y:355
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -94,7 +94,7 @@ let levels = {
                 x:150,
                 y:150
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -155,7 +155,7 @@ let levels = {
                 x:650,
                 y:220
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -216,7 +216,7 @@ let levels = {
                 x:150,
                 y:150
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -275,7 +275,7 @@ let levels = {
                 x:385,
                 y:415
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -328,13 +328,26 @@ let levels = {
             autoplay: false,
                 }),
             ]
+    /* boxs = [
+        new Sprite({
+            position: {
+                x:200,
+                y:285
+            },
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ] */
     boxs = [
         new BoxSprite({
             position: {
                 x:140,
                 y:285
             },
-            imageSrc: './img/box/idlebox.png',
+            imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
             loop: false,

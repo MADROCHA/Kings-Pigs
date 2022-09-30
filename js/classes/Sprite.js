@@ -190,7 +190,7 @@ class BoxSprite extends Sprite {
             }
     }
 }
-class DiamondSprite extends Sprite {
+/* class DiamondSprite extends Sprite {
         constructor(Sprite) {
         super(Sprite)
     }
@@ -259,4 +259,4 @@ class DiamondSprite extends Sprite {
                 }
             }
     }
-}
+} */

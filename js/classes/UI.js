@@ -6,16 +6,26 @@
     }
 } */
 
-class UI {
+class PlayerUI /* extends Sprite */ {
     constructor({
         position,
         imageSrc, 
-        frameRate = 1, 
+        frameRate, 
         animations, 
-        frameBuffer = 2, 
+        frameBuffer, 
         loop = true,
         autoplay = true,
+        
     }) {
+        /* super(
+            position,
+            imageSrc, 
+            frameRate, 
+            animations, 
+            frameBuffer, 
+            loop = true,
+            autoplay = true,
+        ) */
         this.debug = true
         
         this.position = position;
@@ -50,10 +60,10 @@ class UI {
         if (!this.loaded) return
         const cropBox = {
             position: {
-                x:this.width * this.currentFrame  ,
+                x:this.width * this.currentFrame ,//-4,
                 y:0,
             },
-            width: this.width -1.8,
+            width: this.width ,//-4,
             height: this.height,
         }
         //c.strokeStyle = 'red'
@@ -71,7 +81,13 @@ class UI {
             )
             if(!ui.debug){
                 c.strokeStyle = 'blue'
-                c.strokeRect(this.position.x, this.position.y, cropBox.width, cropBox.height)
+                c.strokeRect
+                    (
+                    this.position.x,
+                    this.position.y,
+                    cropBox.width,// +4,
+                    cropBox.height
+                    )
                 /*
                 // collision wip 0.1
                 c.strokeStyle = 'gold'
@@ -108,12 +124,22 @@ class UI {
     }
 }
 
-const ui = new UI({
+const DiamondsUI = new PlayerUI({
     imageSrc: 'img/livesAndCoins/SmallDiamond.png',
     position: {
-        x:20,
-        y:10
+        x:5,
+        y:50
     },
     frameRate: 8,
     frameBuffer: 8,
+
+})
+const LivesUI = new PlayerUI({
+    imageSrc: 'img/livesAndCoins/liveBar.png',
+    position: {
+        x:0,
+        y:0
+    },
+    frameRate: 1,
+    frameBuffer: 1,
 })

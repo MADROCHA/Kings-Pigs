@@ -9,6 +9,10 @@ let collisionBlocks;
 let background;
 let doors;
 let boxs;
+// level 6
+//let boxs1;
+// level 6
+
 let diamonds;
 const player = new Player({
     //same thing as -v-
@@ -91,6 +95,12 @@ const keys = {
     }
 }
 
+class UI {
+    constructor(){
+        this.debug = true
+    }
+}
+const ui = new UI()
 
 const overlay = {
     opacity: 0,
@@ -105,7 +115,8 @@ function animate(){
     collisionBlocks.forEach(collisionBlock =>{
         collisionBlock.draw()
     })
-    ui.draw()
+    LivesUI.draw()
+    DiamondsUI.draw()
     
     doors.forEach(door =>{
         door.draw()
@@ -113,6 +124,9 @@ function animate(){
     boxs.forEach(box =>{
         box.draw()
     })
+    /* boxs1.forEach(box1 =>{
+        box1.draw()
+    }) */
     diamonds.forEach(diamond =>{
         diamond.draw()
     })
