@@ -329,7 +329,7 @@ let levels = {
                 }),
             ]
     boxs = [
-        new Sprite({
+        new BoxSprite({
             position: {
                 x:140,
                 y:285
@@ -342,7 +342,7 @@ let levels = {
                 }),
             ]
     diamonds = [
-        new Sprite({
+        new DiamondSprite({
             position: {
                 x:775,
                 y:220

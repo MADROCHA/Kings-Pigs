@@ -90,12 +90,8 @@ const keys = {
         pressed:false
     }
 }
-class UI {
-    constructor(){
-        this.debug = true
-    }
-}
-const ui = new UI()
+
+
 const overlay = {
     opacity: 0,
 }
@@ -109,7 +105,7 @@ function animate(){
     collisionBlocks.forEach(collisionBlock =>{
         collisionBlock.draw()
     })
-
+    ui.draw()
     
     doors.forEach(door =>{
         door.draw()
