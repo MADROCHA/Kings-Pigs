@@ -1,4 +1,4 @@
-let level = 1   
+let level = 6   
 let levels = {
     1: {
         init: () => {
@@ -14,7 +14,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel1.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel1.png',
 })
     doors = [
         new Sprite({
@@ -22,11 +22,38 @@ let levels = {
                 x:767,
                 y:270,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:500,
+                y:355
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:500,
+                y:275
+                //y:325
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         },
@@ -46,7 +73,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel2.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel2.png',
 })
     doors = [
         new Sprite({
@@ -54,11 +81,37 @@ let levels = {
                 x:772,
                 y:336,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:150,
+                y:150
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:150,
+                y:425
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         },
@@ -81,7 +134,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel3.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel3.png',
     })
     doors = [
         new Sprite({
@@ -89,11 +142,37 @@ let levels = {
                 x:176,
                 y:334,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:650,
+                y:220
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:130,
+                y:220
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         },
@@ -116,7 +195,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel4.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel4.png',
     })
     doors = [
         new Sprite({
@@ -124,11 +203,37 @@ let levels = {
                 x:832,
                 y:320 - 112,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:150,
+                y:150
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:725,
+                y:265
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         },
@@ -149,7 +254,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel5.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel5.png',
     })
     doors = [
         new Sprite({
@@ -157,11 +262,37 @@ let levels = {
                 x:474,
                 y:338,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:385,
+                y:415
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:202,
+                y:335
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         },
@@ -182,7 +313,7 @@ let levels = {
         x:0,
         y:0,
     },
-    imageSrc: './img/backgroundLevel6.png',
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel6.png',
     })
     doors = [
         new Sprite({
@@ -190,11 +321,37 @@ let levels = {
                 x:880,
                 y:210 ,
             },
-            imageSrc: './img/doorOpen.png',
+            imageSrc: './img/door/doorOpen.png',
             frameRate: 5,
             frameBuffer: 5,
             loop: false,
             autoplay: false,
+                }),
+            ]
+    boxs = [
+        new Sprite({
+            position: {
+                x:140,
+                y:285
+            },
+            imageSrc: './img/box/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Sprite({
+            position: {
+                x:775,
+                y:220
+            },
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true,
                 }),
             ]
         }

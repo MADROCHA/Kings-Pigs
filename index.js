@@ -7,7 +7,9 @@ let parsedCollisions;
 //console.log(parsedCollisions)
 let collisionBlocks;
 let background;
-let doors
+let doors;
+let boxs;
+let diamonds;
 const player = new Player({
     //same thing as -v-
     //collisionBlocks: collisionBlocks
@@ -111,6 +113,12 @@ function animate(){
     
     doors.forEach(door =>{
         door.draw()
+    })
+    boxs.forEach(box =>{
+        box.draw()
+    })
+    diamonds.forEach(diamond =>{
+        diamond.draw()
     })
     player.handleInput(keys)
     player.draw()
