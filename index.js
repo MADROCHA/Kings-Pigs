@@ -115,8 +115,10 @@ function animate(){
     collisionBlocks.forEach(collisionBlock =>{
         collisionBlock.draw()
     })
-    LivesUI.draw()
-    DiamondsUI.draw()
+    LiveBarUI.draw()
+    HeartUI.draw()
+    //HeartUI.draw()
+    DiamondUI.draw()
     
     doors.forEach(door =>{
         door.draw()

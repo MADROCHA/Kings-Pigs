@@ -1,4 +1,4 @@
-class DiamondSprite extends Sprite {
+class Currencies extends Sprite {
     constructor(Sprite) {
     super(Sprite)
 }

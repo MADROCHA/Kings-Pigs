@@ -355,7 +355,7 @@ let levels = {
                 }),
             ]
     diamonds = [
-        new DiamondSprite({
+        new Currencies({
             position: {
                 x:775,
                 y:220

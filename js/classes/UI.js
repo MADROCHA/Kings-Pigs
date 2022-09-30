@@ -1,11 +1,3 @@
-/* class UI {
-    constructor(
-        
-    ){
-        this.debug = true
-    }
-} */
-
 class PlayerUI /* extends Sprite */ {
     constructor({
         position,
@@ -26,7 +18,7 @@ class PlayerUI /* extends Sprite */ {
             loop = true,
             autoplay = true,
         ) */
-        this.debug = true
+        
         
         this.position = position;
         this.image = new Image();
@@ -47,7 +39,7 @@ class PlayerUI /* extends Sprite */ {
         this.currentAnimation;
 
         if(this.animations) {
-            for (let key in this.animations) {
+            for (let key in this.animations) {  
                 const image = new Image()
                 image.src = this.animations[key].imageSrc
                 this.animations[key].image = image
@@ -124,7 +116,7 @@ class PlayerUI /* extends Sprite */ {
     }
 }
 
-const DiamondsUI = new PlayerUI({
+const DiamondUI = new PlayerUI({
     imageSrc: 'img/livesAndCoins/SmallDiamond.png',
     position: {
         x:5,
@@ -134,7 +126,7 @@ const DiamondsUI = new PlayerUI({
     frameBuffer: 8,
 
 })
-const LivesUI = new PlayerUI({
+const LiveBarUI = new PlayerUI({
     imageSrc: 'img/livesAndCoins/liveBar.png',
     position: {
         x:0,
@@ -143,3 +135,23 @@ const LivesUI = new PlayerUI({
     frameRate: 1,
     frameBuffer: 1,
 })
+const HeartUI = new PlayerUI({
+    imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
+    position: {
+        x:0,
+        y:0
+        //x:66,
+        //y:34
+    },
+    frameRate: 8,
+    frameBuffer: 8,
+})
+/* const HeartUI = new PlayerUI({
+    imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
+    position: {
+        x:66,
+        y:34
+    },
+    frameRate: 8,
+    frameBuffer: 8,
+}) */

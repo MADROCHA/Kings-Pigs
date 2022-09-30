@@ -7,6 +7,11 @@ class Player extends Sprite {
         loop
     }) {
         super({imageSrc, frameRate, animations, loop})
+        this.LifeStatus = {
+            playerLives: [],
+            maxLives: 3,
+            currentLives: 1
+        }
         this.position = {
             x: 200,
             y: 200,
@@ -35,8 +40,8 @@ draw(){
     } 
     */
     update(){
+        
         if(!ui.debug){
-
             c.strokeStyle = 'blue';
             c.strokeRect(this.position.x, this.position.y, this.width, this.height);
         }
