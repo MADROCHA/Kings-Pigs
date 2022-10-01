@@ -60,17 +60,19 @@ class PlayerUI /* extends Sprite */ {
         }
         //c.strokeStyle = 'red'
         //c.strokeRect(this.position.x, this.position.y)
-        c.drawImage(
-            this.image,
-            cropBox.position.x,
-            cropBox.position.y, 
-            cropBox.width, 
-            cropBox.height, 
-            this.position.x, 
-            this.position.y,
-            this.width,
-            this.height
-            )
+        for (let i = 0; i < player.LifeStatus.currentLives; i++ ){
+            c.drawImage(
+                this.image ,
+                cropBox.position.x  ,
+                cropBox.position.y , 
+                cropBox.width , 
+                cropBox.height, 
+                this.position.x, 
+                this.position.y,
+                this.width ,
+                this.height
+                ) 
+            }
             if(!ui.debug){
                 c.strokeStyle = 'blue'
                 c.strokeRect
@@ -135,16 +137,17 @@ const LiveBarUI = new PlayerUI({
     frameRate: 1,
     frameBuffer: 1,
 })
-const HeartUI = new PlayerUI({
+/* const HeartUI = new PlayerUI({
     imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
     position: {
-        x:66,
-        y:34
+        x:20,
+        y:20
     },
     frameRate: 8,
     frameBuffer: 8,
-}) 
-/* class HeartUI    {
+})  */
+/* */
+class HeartUI    {
     constructor({
         position,
         imageSrc, 
@@ -200,16 +203,27 @@ const HeartUI = new PlayerUI({
         for (let i = 0; i < player.LifeStatus.currentLives; i++){
             c.drawImage(
                 this.image,
-                cropBox.position.x * i,
+                cropBox.position.x ,
                 cropBox.position.y, 
                 cropBox.width, 
                 cropBox.height, 
-                this.position.x, 
+                this.position.x * i + 24, 
                 this.position.y,
                 this.width,
                 this.height
                 )
             }
+            /* c.drawImage(
+                this.image,
+                cropBox.position.x ,
+                cropBox.position.y, 
+                cropBox.width, 
+                cropBox.height, 
+                this.position.x ,
+                this.position.y,
+                this.width,
+                this.height
+                ) */
             if(!ui.debug){
                 c.strokeStyle = 'blue'
                 c.strokeRect
@@ -244,7 +258,7 @@ const HeartUI = new PlayerUI({
             }
         }
     }
-} */
+} 
 
 /* const HeartUI = new PlayerUI({
     imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',

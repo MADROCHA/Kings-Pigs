@@ -32,8 +32,9 @@ class Player extends Sprite {
             */
             //
             ],
+            currentLives: 3,
+            minLives: 1,
             maxLives: 3,
-            currentLives: 3
         }
         this.position = {
             x: 200,
@@ -91,6 +92,15 @@ draw(){
             
         } else this.velocity.y = 0
         */
+//playerLives
+        if( 
+            this.position.y >= canvas.height 
+            && this.LifeStatus.currentLives >= this.LifeStatus.minLives 
+            
+            ){
+                this.position.y = 0
+            this.LifeStatus.currentLives -=1
+        }
     } 
     handleInput(keys){
         if(this.nullifyInput) return

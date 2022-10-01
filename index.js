@@ -106,15 +106,15 @@ const overlay = {
     opacity: 0,
 }
 
-/* const heartUI = new HeartUI({
+const heartUI = new HeartUI({
     imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
     position: {
-        x:100,
-        y:100,
+        x:20,
+        y:20,
     },
     frameRate: 8,
     frameBuffer: 8,
-}) */
+})
 function animate(){
     window.requestAnimationFrame(animate)
     c.clearRect(0,0, canvas.width,canvas.height )
@@ -126,13 +126,20 @@ function animate(){
         collisionBlock.draw()
     })
     LiveBarUI.draw()
-    //heartUI.draw()
+    if(player.LifeStatus.currentLives >= 1){
+        
+        heartUI.draw()
+    }
     //console.log(heartUI)
-    HeartUI.draw()
+    //HeartUI.draw()
     DiamondUI.draw()
+
+
+    /*
     player.LifeStatus.playerLives.forEach(hearts =>{
         hearts.draw()
-    })
+    }) 
+    */
     
     doors.forEach(door =>{
         door.draw()

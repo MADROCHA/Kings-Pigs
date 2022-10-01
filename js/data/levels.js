@@ -1,4 +1,4 @@
-let level = 7   
+let level = 6   
 let levels = {
     1: {
         init: () => {
