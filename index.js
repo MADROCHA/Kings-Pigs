@@ -57,7 +57,7 @@ const player = new Player({
                     onComplete: () =>{
                         
                         level++
-                        if (level === 7) {
+                        if (level === 8) {
                             level = 1
                         }
                         levels[level].init()
@@ -105,6 +105,16 @@ const ui = new UI()
 const overlay = {
     opacity: 0,
 }
+
+/* const heartUI = new HeartUI({
+    imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
+    position: {
+        x:100,
+        y:100,
+    },
+    frameRate: 8,
+    frameBuffer: 8,
+}) */
 function animate(){
     window.requestAnimationFrame(animate)
     c.clearRect(0,0, canvas.width,canvas.height )
@@ -116,9 +126,13 @@ function animate(){
         collisionBlock.draw()
     })
     LiveBarUI.draw()
+    //heartUI.draw()
+    //console.log(heartUI)
     HeartUI.draw()
-    //HeartUI.draw()
     DiamondUI.draw()
+    player.LifeStatus.playerLives.forEach(hearts =>{
+        hearts.draw()
+    })
     
     doors.forEach(door =>{
         door.draw()
@@ -135,7 +149,7 @@ function animate(){
     player.handleInput(keys)
     player.draw()
     player.update()
-    
+    console.log(diamonds)
     c.save()
     c.globalAlpha = overlay.opacity
     c.fillStyle = 'black'

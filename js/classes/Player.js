@@ -8,9 +8,32 @@ class Player extends Sprite {
     }) {
         super({imageSrc, frameRate, animations, loop})
         this.LifeStatus = {
-            playerLives: [],
+            playerLives: [
+                //
+                /* 
+                new PlayerUI({
+                imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
+                position: {
+                    x:20,
+                    y:20
+                },
+                frameRate: 8,
+                frameBuffer: 8,
+            }),
+                new PlayerUI({
+                imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
+                position: {
+                    x:43,
+                    y:20
+                },
+                frameRate: 8,
+                frameBuffer: 8,
+            }), 
+            */
+            //
+            ],
             maxLives: 3,
-            currentLives: 1
+            currentLives: 3
         }
         this.position = {
             x: 200,
@@ -40,7 +63,7 @@ draw(){
     } 
     */
     update(){
-        
+
         if(!ui.debug){
             c.strokeStyle = 'blue';
             c.strokeRect(this.position.x, this.position.y, this.width, this.height);

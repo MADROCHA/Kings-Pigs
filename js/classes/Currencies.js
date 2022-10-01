@@ -1,6 +1,39 @@
-class Currencies extends Sprite {
-    constructor(Sprite) {
-    super(Sprite)
+class Currencies{
+    constructor(
+        {position,
+        animations, 
+        imageSrc = './img/livesAndCoins/bigDiamondIdle.png',
+        frameRate = 10,
+        frameBuffer = 7,
+        loop = true,
+        autoplay = true,}) {
+
+        this.position = position;
+        this.image = new Image();
+        this.image.onload = () => {
+            this.loaded = true;
+            this.width = this.image.width / this.frameRate
+            this.height = this.image.height
+        }
+        this.image.src = imageSrc;
+        this.loaded = false;
+        this.frameRate = frameRate;
+        this.currentFrame = 0;
+        this.elapsedFrames = 0;
+        this.frameBuffer = frameBuffer;
+        this.animations = animations;
+        this.loop = loop;
+        this.autoplay = autoplay;
+        this.currentAnimation;
+
+        if(this.animations) {
+            for (let key in this.animations) {  
+                const image = new Image()
+                image.src = this.animations[key].imageSrc
+                this.animations[key].image = image
+            }
+            //console.log(this.animations)
+        }
 }
 draw(){
     if (!this.loaded) return
