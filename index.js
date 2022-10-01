@@ -146,6 +146,7 @@ function animate(){
     })
     boxs.forEach(box =>{
         box.draw()
+        box.update()
     })
     /* boxs1.forEach(box1 =>{
         box1.draw()

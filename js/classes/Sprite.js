@@ -4,7 +4,7 @@ class Sprite {
         imageSrc, 
         frameRate = 1, 
         animations, 
-        frameBuffer = 2, 
+        frameBuffer = 1, 
         loop = true,
         autoplay = true,
     }) {
@@ -120,6 +120,11 @@ class Sprite {
 class BoxSprite extends Sprite {
         constructor(Sprite) {
         super(Sprite)
+        this.velocity = {
+            x:0,
+            y:0,
+        }
+        this.weight = 0.1
     }
     draw(){
         if (!this.loaded) return
@@ -150,6 +155,10 @@ class BoxSprite extends Sprite {
             c.strokeRect(this.hitBox.position.x, this.hitBox.position.y, this.hitBox.width, this.hitBox.height)
         }
         //
+    }
+    update(){
+        //  this.applyWeight()
+        //this.checkForVerticalCollisions()
     }
         // collisions wip 0.1
         updateHitbox(){
@@ -189,6 +198,37 @@ class BoxSprite extends Sprite {
                 }
             }
     }
+    applyWeight(){
+        this.velocity.y += this.weight
+        this.position.y += this.velocity.y
+    }
+    /* checkForVerticalCollisions(){
+        for (let i = 0; i < this.collisionBlocks.length; i++){
+            const collisionBlock = this.collisionBlocks[i]
+            // if collision happens
+            if (
+                this.hitBox.position.x <= collisionBlock.position.x + collisionBlock.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBlock.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBlock.position.y
+                && this.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height
+            ) {
+                // vertical y axis collision player and sprite
+                if (this.velocity.y < -0) {
+                    this.velocity.y = 0
+                    const offset = this.hitBox.position.y - this.position.y 
+                    this.position.y = collisionBlock.position.y + collisionBlock.height - offset + 0.01
+                    break
+                }
+
+                if (this.velocity.y > 0) {
+                    this.velocity.y = 0
+                    const offset = this.hitBox.position.y - this.position.y + this.hitBox.height
+                    this.position.y = collisionBlock.position.y - offset - 0.01
+                    break
+                }
+            }
+        }
+    } */
 }
 /* class DiamondSprite extends Sprite {
         constructor(Sprite) {
