@@ -1,4 +1,4 @@
-let level = 6   
+let level = 8  
 let levels = {
     1: {
         init: () => {
@@ -41,6 +41,30 @@ let levels = {
             loop: false,
             autoplay: false,
                 }),
+        new BoxSprite({
+            position: {
+                x:300,
+                y:255
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+        new BoxSprite({
+            position: {
+                x:300,
+                y:205
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
             ]
     diamonds = [
         new Sprite({
@@ -60,7 +84,7 @@ let levels = {
                 x:645,
                 y:210
             },
-            /* */            
+                    
             imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
             frameRate: 10,
             frameBuffer: 7,
@@ -102,11 +126,12 @@ let levels = {
                 }),
             ]
     boxs = [
-        new Sprite({
+        new BoxSprite({
             position: {
-                x:150,
+                x:220,
                 y:150
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
@@ -179,11 +204,12 @@ let levels = {
                 }),
             ]
     boxs = [
-        new Sprite({
+        new BoxSprite({
             position: {
                 x:650,
-                y:220
+                y:150
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
@@ -373,6 +399,7 @@ let levels = {
                 x:140,
                 y:285
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
@@ -455,8 +482,9 @@ let levels = {
         new BoxSprite({
             position: {
                 x:845,
-                y:420
+                y:220
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
@@ -485,6 +513,118 @@ let levels = {
             },
             /* */            
             imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+                }),
+            ]
+        }
+    },
+    8: {
+        init: () => {
+            parsedCollisions = collisionsLevel8.parse2D()
+            collisionBlocks = parsedCollisions.createObjectsFrom2D()
+            player.collisionBlocks = collisionBlocks,
+            player.position.x = 15
+            player.position.y = 420
+            if (player.currentAnimation) player.currentAnimation.isActive = false
+            background = new Sprite({
+    position: {
+        x:0,
+        y:0,
+    },
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel8.png',
+    })
+    doors = [
+        new Sprite({
+            position: {
+                x:100,
+                y:15 ,
+            },
+            imageSrc: './img/door/doorOpen.png',
+            frameRate: 5,
+            frameBuffer: 5,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    /* boxs = [
+        new Sprite({
+            position: {
+                x:200,
+                y:285
+            },
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ] */
+    boxs = [
+        new BoxSprite({
+            position: {
+                x:845,
+                y:220
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+            ]
+    diamonds = [
+        new Currencies({
+            position: {
+                x:905,
+                y:325
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+        }),
+        new Currencies({
+            position: {
+                x:265,
+                y:400
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+        }),
+        new Currencies({
+            position: {
+                x:785,
+                y:400
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+                }),
+        new Currencies({
+            position: {
+                x:905,
+                y:465
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
             frameRate: 10,
             frameBuffer: 7,
             loop: true,

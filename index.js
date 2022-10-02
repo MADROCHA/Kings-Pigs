@@ -57,7 +57,7 @@ const player = new Player({
                     onComplete: () =>{
                         
                         level++
-                        if (level === 8) {
+                        if (level === 9) {
                             level = 1
                         }
                         levels[level].init()
@@ -125,14 +125,13 @@ function animate(){
     collisionBlocks.forEach(collisionBlock =>{
         collisionBlock.draw()
     })
-    LiveBarUI.draw()
-    if(player.LifeStatus.currentLives >= 1){
-        
-        heartUI.draw()
-    }
+    //
+    doors.forEach(door =>{
+        door.draw()
+    })
     //console.log(heartUI)
     //HeartUI.draw()
-    DiamondUI.draw()
+    //
 
 
     /*
@@ -141,9 +140,6 @@ function animate(){
     }) 
     */
     
-    doors.forEach(door =>{
-        door.draw()
-    })
     boxs.forEach(box =>{
         box.draw()
         box.update()
@@ -154,6 +150,13 @@ function animate(){
     diamonds.forEach(diamond =>{
         diamond.draw()
     })
+    // UI SET
+    DiamondUI.draw()
+    LiveBarUI.draw()
+    if(player.LifeStatus.currentLives >= 1){
+        heartUI.draw()
+    }
+    // UI 
     player.handleInput(keys)
     player.draw()
     player.update()

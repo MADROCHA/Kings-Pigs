@@ -76,6 +76,9 @@ class Sprite {
               */
             //
     }
+    update(){
+        
+    }
     play(){
         this.autoplay = true;
     }
@@ -117,7 +120,7 @@ class Sprite {
     //
      */
 }
-class BoxSprite extends Sprite {
+/* class BoxSprite extends Sprite {
         constructor(Sprite) {
         super(Sprite)
         this.velocity = {
@@ -228,8 +231,8 @@ class BoxSprite extends Sprite {
                 }
             }
         }
-    } */
-}
+    }
+}  */
 /* class DiamondSprite extends Sprite {
         constructor(Sprite) {
         super(Sprite)
