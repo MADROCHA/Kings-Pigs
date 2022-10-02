@@ -61,6 +61,10 @@ draw(){
     this.updateHitbox()
     // collision wip 0.1
     if(!ui.debug){
+        c.strokeStyle = 'blue'
+        c.strokeRect(this.position.x, this.position.y, this.width, this.height)
+    }
+    if(!ui.debug){
         c.strokeStyle = 'gold'
         c.strokeRect(this.hitBox.position.x, this.hitBox.position.y, this.hitBox.width, this.hitBox.height)
     }
@@ -101,7 +105,7 @@ draw(){
         }
 }
 }
-class smallDiamonds extends Currencies {
+class smallDiamond extends Currencies {
     constructor(
         {
         position,
@@ -121,6 +125,31 @@ class smallDiamonds extends Currencies {
             loop ,
             autoplay ,
         })
+        this.markedForDeletion = false
+        this.hitBox = {
+            position:{
+
+                x: this.position.x +10,
+                y: this.position.y +4
+
+            },
+            width: this.width * 0.7 ,
+            height: this.height *0.7,    
+        } 
+    }
+    update(){
+        if(this.checkCollision(player, this)){
+            player.scoreStats.amountDiamonds++;
+            this.markedForDeletion = true;
+        }
+    }
+    checkCollision(player, rect2){
+        return (
+        player.hitBox.position.x < rect2.hitBox.position.x + rect2.hitBox.width &&
+        player.hitBox.position.x + player.hitBox.width > rect2.hitBox.position.x &&
+        player.hitBox.position.y < rect2.hitBox.position.y + rect2.hitBox.height &&
+        player.hitBox.position.y + player.hitBox.height > rect2.hitBox.position.y )
+        //
     }
 }
 /* class BoxSprite  {

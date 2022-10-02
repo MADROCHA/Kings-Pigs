@@ -8,7 +8,7 @@ class Player extends Sprite {
     }) {
         super({imageSrc, frameRate, animations, loop})
         this.scoreStats = {
-            
+            amountDiamonds: 0,
         }
         this.liveStats = {
             playerLives: [
@@ -56,6 +56,21 @@ class Player extends Sprite {
             bottom: this.position.y + this.height
         }
         //this.jump = false // JUMP 0.1C
+        this.hitBox = {
+            position:{
+                //x: this.position.x + this.width * 0.40,
+                //y: this.position.y + this.height * 0.26,
+                //x: this.position.x + this.width * 0.34,
+                //y: this.position.y + this.height * 0.26,
+                x: this.position.x +55,
+                y: this.position.y +32
+                //+58
+                //+34
+            },
+            width: 46,
+            height: 56,    
+        }
+    
     }
 /*     
 draw(){

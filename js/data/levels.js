@@ -1,4 +1,4 @@
-let level = 8  
+let level = 3  
 let levels = {
     1: {
         init: () => {
@@ -66,8 +66,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Sprite({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:600,
                 y:275
@@ -79,7 +79,7 @@ let levels = {
             loop: true,
             autoplay: true,
                 }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:645,
                 y:210
@@ -139,8 +139,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Sprite({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:130,
                 y:480
@@ -153,13 +153,13 @@ let levels = {
             loop: true,
             autoplay: true,
                 }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:350,
                 y:420
             },        
                 }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:480,
                 y:420
@@ -217,8 +217,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Sprite({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:130,
                 y:220
@@ -278,8 +278,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Sprite({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:725,
                 y:265
@@ -337,8 +337,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Sprite({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:202,
                 y:335
@@ -407,8 +407,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Currencies({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:775,
                 y:220
@@ -421,7 +421,7 @@ let levels = {
             autoplay: true, 
             
                 }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:645,
                 y:75
@@ -492,8 +492,8 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new Currencies({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:715,
                 y:330
@@ -506,7 +506,7 @@ let levels = {
             autoplay: true, 
             
                 }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:905,
                 y:55
@@ -576,15 +576,15 @@ let levels = {
             autoplay: false,
                 }),
             ]
-    diamonds = [
-        new smallDiamonds({
+    smallDiamonds = [
+        new smallDiamond({
             position: {
                 x:905,
                 y:325
             },
             /* */            
         }),
-        new Currencies({
+        new smallDiamond({
             position: {
                 x:265,
                 y:400
@@ -595,7 +595,7 @@ let levels = {
             frameBuffer: 7,
             
         }),
-        new smallDiamonds({
+        new smallDiamond({
             position: {
                 x:785,
                 y:400
@@ -608,7 +608,7 @@ let levels = {
             autoplay: true, 
             
                 }),
-        new smallDiamonds({
+        new smallDiamond({
             position: {
                 x:905,
                 y:465

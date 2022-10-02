@@ -1,3 +1,8 @@
+class UI {
+    constructor(){
+        this.debug = true
+    }
+}
 class PlayerUI /* extends Sprite */ {
     constructor({
         position,
@@ -82,6 +87,7 @@ class PlayerUI /* extends Sprite */ {
                     cropBox.width,// +4,
                     cropBox.height
                     )
+                    
                 /*
                 // collision wip 0.1
                 c.strokeStyle = 'gold'
@@ -90,6 +96,9 @@ class PlayerUI /* extends Sprite */ {
                 */
             }
             this.updateFrames()
+            c.fillStyle = 'rgb(70,130,180)'
+            c.font = 20 +'px '+ 'Helvetica'; 
+            c.fillText(player.scoreStats.amountDiamonds, 50,70,800)
             // collision wip 0.1
             /*
             this.updateHitbox()

@@ -13,7 +13,7 @@ let boxs;
 //let boxs1;
 // level 6
 
-let diamonds;
+let smallDiamonds;
 const player = new Player({
     //same thing as -v-
     //collisionBlocks: collisionBlocks
@@ -57,7 +57,7 @@ const player = new Player({
                     onComplete: () =>{
                         
                         level++
-                        if (level === 9) {
+                        if (level === 7) {
                             level = 1
                         }
                         levels[level].init()
@@ -95,17 +95,10 @@ const keys = {
     }
 }
 
-class UI {
-    constructor(){
-        this.debug = true
-    }
-}
 const ui = new UI()
-
 const overlay = {
     opacity: 0,
 }
-
 const heartUI = new HeartUI({
     imageSrc: 'img/livesAndCoins/SmallHeartIdle.png',
     position: {
@@ -118,7 +111,7 @@ const heartUI = new HeartUI({
 function animate(){
     window.requestAnimationFrame(animate)
     c.clearRect(0,0, canvas.width,canvas.height )
-    
+    console.log(player.scoreStats.amountDiamonds)
     //c.fillStyle = 'azure';
     //c.fillRect(0, 0, canvas.width, canvas.height);
     background.draw()
@@ -132,10 +125,10 @@ function animate(){
     //console.log(heartUI)
     //HeartUI.draw()
     // WIP 
-    diamonds.forEach(smallDiamonds=>{
+    /*  diamonds.forEach(smallDiamonds=>{
         c.strokeStyle = 'red'
         c.strokeRect(10,10,100,100)
-    })
+    }) */
     //
 
 
@@ -152,8 +145,10 @@ function animate(){
     /* boxs1.forEach(box1 =>{
         box1.draw()
     }) */
-    diamonds.forEach(diamond =>{
-        diamond.draw()
+    smallDiamonds.forEach(diamonds =>{
+        diamonds.draw()
+        diamonds.update()
+        smallDiamonds = smallDiamonds.filter(smallDiamonds => !smallDiamonds.markedForDeletion)
     })
     // UI SET
     DiamondUI.draw()
@@ -165,7 +160,7 @@ function animate(){
     player.handleInput(keys)
     player.draw()
     player.update()
-    console.log(diamonds)
+    //console.log(diamonds)
     c.save()
     c.globalAlpha = overlay.opacity
     c.fillStyle = 'black'
