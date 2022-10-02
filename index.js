@@ -17,6 +17,7 @@ let smallDiamonds;
 const player = new Player({
     //same thing as -v-
     //collisionBlocks: collisionBlocks
+    
     imageSrc: './img/king/idle.png',
     frameRate: 11,
     animations: {
@@ -57,7 +58,7 @@ const player = new Player({
                     onComplete: () =>{
                         
                         level++
-                        if (level === 7) {
+                        if (level === 9) {
                             level = 1
                         }
                         levels[level].init()

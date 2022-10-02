@@ -4,7 +4,8 @@ class Player extends Sprite {
         imageSrc,
         frameRate,
         animations,
-        loop
+        loop,
+        //boxs = [],
     }) {
         super({imageSrc, frameRate, animations, loop})
         this.scoreStats = {
@@ -70,7 +71,7 @@ class Player extends Sprite {
             width: 46,
             height: 56,    
         }
-    
+    //this.boxs = boxs
     }
 /*     
 draw(){
@@ -119,6 +120,13 @@ draw(){
                 this.position.y = 0
             this.liveStats.currentLives -=1
         }
+        this.checkForPlayer()
+        // WIP:OLD collisions - empty array -v
+        //console.log(this.boxs)
+        // WIP:OLD collisions - empty array -v
+        console.log(boxs)
+        
+        //console.log(levels)
     } 
     handleInput(keys){
         if(this.nullifyInput) return
@@ -161,6 +169,14 @@ draw(){
             height: 56,    
         }
     }
+    checkCollision(player, rect2){
+        return (
+        player.hitBox.position.x < rect2.hitBox.position.x + rect2.hitBox.width &&
+        player.hitBox.position.x + player.hitBox.width > rect2.hitBox.position.x &&
+        player.hitBox.position.y < rect2.hitBox.position.y + rect2.hitBox.height &&
+        player.hitBox.position.y + player.hitBox.height > rect2.hitBox.position.y )
+        //
+    }
     checkForHorizontalCollisions (){
         for (let i = 0; i < this.collisionBlocks.length; i++){
             const collisionBlock = this.collisionBlocks[i]
@@ -177,7 +193,7 @@ draw(){
                     this.position.x = collisionBlock.position.x + collisionBlock.width - offset + 0.01
                     break
                 }
-
+                
                 if (this.velocity.x > 0) {
                     const offset = this.hitBox.position.x - this.position.x + this.hitBox.width
                     this.position.x = collisionBlock.position.x - offset - 0.01
@@ -217,4 +233,32 @@ draw(){
             }
         }
     }
-}
+    checkForPlayer (){
+        for (let i = 0; i < boxs.length; i++){
+            const collisionBox = boxs[i]
+            // if collision happens
+            if (
+                this.hitBox.position.x <= collisionBox.position.x + collisionBox.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBox.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBox.position.y
+                && this.hitBox.position.y <= collisionBox.position.y + collisionBox.height
+            ) {
+        console.log('Horizontal Collision')
+                // horizontal x axis collision player and sprite
+                if (this.velocity.x < -0) {
+                    const offset = this.hitBox.position.x - this.position.x
+                    this.position.x = collisionBox.position.x + collisionBox.width - offset + 0.01
+        console.log('Right collision Player')
+                    break
+                }
+                
+                if (this.velocity.x > 0) {
+                    const offset = this.hitBox.position.x - this.position.x + this.hitBox.width
+                    this.position.x = collisionBox.position.x - offset - 0.01
+                    console.log('Left collision Player')
+                    break
+                        }
+                    }
+                }
+            } 
+    }

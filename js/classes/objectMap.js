@@ -209,7 +209,9 @@ class BoxSprite extends ObjectMap {
         frameBuffer = 1,
         loop = true,
         autoplay = true,
-        collisionBlocks = [],}) {
+        collisionBlocks = [],
+        boxs =[],
+    }) {
         super({position,
             animations, 
             imageSrc ,
@@ -219,5 +221,75 @@ class BoxSprite extends ObjectMap {
             autoplay ,
             collisionBlocks,
         })
+        this.boxs = boxs
+        this.hitBox = {
+            position:{
+                //x: this.position.x + this.width * 0.40,
+                //y: this.position.y + this.height * 0.26,
+                //x: this.position.x + this.width * 0.34,
+                //y: this.position.y + this.height * 0.26,
+                x: this.position.x,
+                y: this.position.y,
+                //+58
+                //+34
+            },
+            width: 44,
+            height: 32,    
+        }
     }
+    update(){
+    if(!ui.debug){
+        c.strokeStyle = 'blue'
+        c.strokeRect(this.position.x, this.position.y, this.width, this.height)
+    }
+    this.position.x += this.velocity.x
+    //this.velocity.x = +1
+    this.updateHitbox()
+    this.checkForHorizontalCollisions()
+    this.applyWeight()
+    this.updateHitbox()
+    if(!ui.debug){
+        c.strokeStyle = 'gold'
+        c.strokeRect(this.hitBox.position.x, this.hitBox.position.y, this.hitBox.width, this.hitBox.height)
+    }
+    this.checkForVerticalCollisions()
+    
+    //this.velocity.x = 0.5
+    
+// collision boxes WIP
+    //this.checkForPlayer()
+// collision boxes WIP
+    }
+// collision boxes WIP
+/* 
+    checkForPlayer (){
+        for (let i = 0; i < this.boxs.length; i++){
+            const collisionBox = this.boxs[i]
+            // if collision happens
+            if (
+                this.hitBox.position.x <= collisionBox.position.x + collisionBox.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBox.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBox.position.y
+                && this.hitBox.position.y <= collisionBox.position.y + collisionBox.height
+            ) {
+        console.log('hi there line objectMaps 270')
+                // horizontal x axis collision player and sprite
+                if (this.velocity.x < -0) {
+                    const offsetBox = this.hitBox.position.x - this.position.x
+                    this.position.x = collisionBox.position.x + collisionBox.width - offsetBox + 0.01
+        console.log('hi there line objectMaps 274')
+                    break
+                }
+                
+                if (this.velocity.x > 0) {
+                    const offsetBox = this.hitBox.position.x - this.position.x + this.hitBox.width
+                    this.position.x = collisionBox.position.x - offsetBox - 0.01
+        console.log('hi there line objectMaps 281')
+                    break
+                }
+            }
+        }
+    } 
+    */
+// collision boxes WIP
 }
