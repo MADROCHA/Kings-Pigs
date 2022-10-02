@@ -131,6 +131,11 @@ function animate(){
     })
     //console.log(heartUI)
     //HeartUI.draw()
+    // WIP 
+    diamonds.forEach(smallDiamonds=>{
+        c.strokeStyle = 'red'
+        c.strokeRect(10,10,100,100)
+    })
     //
 
 
@@ -153,7 +158,7 @@ function animate(){
     // UI SET
     DiamondUI.draw()
     LiveBarUI.draw()
-    if(player.LifeStatus.currentLives >= 1){
+    if(player.liveStats.currentLives >= 1){
         heartUI.draw()
     }
     // UI 

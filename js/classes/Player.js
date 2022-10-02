@@ -7,7 +7,10 @@ class Player extends Sprite {
         loop
     }) {
         super({imageSrc, frameRate, animations, loop})
-        this.LifeStatus = {
+        this.scoreStats = {
+            
+        }
+        this.liveStats = {
             playerLives: [
                 //
                 /* 
@@ -95,11 +98,11 @@ draw(){
 //playerLives
         if( 
             this.position.y >= canvas.height 
-            && this.LifeStatus.currentLives >= this.LifeStatus.minLives 
+            && this.liveStats.currentLives >= this.liveStats.minLives 
             
             ){
                 this.position.y = 0
-            this.LifeStatus.currentLives -=1
+            this.liveStats.currentLives -=1
         }
     } 
     handleInput(keys){

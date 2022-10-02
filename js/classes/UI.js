@@ -60,7 +60,7 @@ class PlayerUI /* extends Sprite */ {
         }
         //c.strokeStyle = 'red'
         //c.strokeRect(this.position.x, this.position.y)
-        for (let i = 0; i < player.LifeStatus.currentLives; i++ ){
+        //for (let i = 0; i < player.liveStats.currentLives; i++ ){
             c.drawImage(
                 this.image ,
                 cropBox.position.x  ,
@@ -72,7 +72,7 @@ class PlayerUI /* extends Sprite */ {
                 this.width ,
                 this.height
                 ) 
-            }
+           // }
             if(!ui.debug){
                 c.strokeStyle = 'blue'
                 c.strokeRect
@@ -200,7 +200,7 @@ class HeartUI    {
         }
 
         
-        for (let i = 0; i < player.LifeStatus.currentLives; i++){
+        for (let i = 0; i < player.liveStats.currentLives; i++){
             c.drawImage(
                 this.image,
                 cropBox.position.x ,
