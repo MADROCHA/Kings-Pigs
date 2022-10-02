@@ -569,8 +569,7 @@ let levels = {
                 x:845,
                 y:220
             },
-            collisionBlocks,
-            imageSrc: './img/boxfolder/idlebox.png',
+            collisionBlocks,    
             frameRate: 1,
             frameBuffer: 1,
             loop: false,
@@ -578,18 +577,12 @@ let levels = {
                 }),
             ]
     diamonds = [
-        new Currencies({
+        new smallDiamonds({
             position: {
                 x:905,
                 y:325
             },
             /* */            
-            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
-            frameRate: 10,
-            frameBuffer: 7,
-            loop: true,
-            autoplay: true, 
-            
         }),
         new Currencies({
             position: {
@@ -600,11 +593,9 @@ let levels = {
             imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
             frameRate: 10,
             frameBuffer: 7,
-            loop: true,
-            autoplay: true, 
             
         }),
-        new Currencies({
+        new smallDiamonds({
             position: {
                 x:785,
                 y:400
@@ -617,7 +608,7 @@ let levels = {
             autoplay: true, 
             
                 }),
-        new Currencies({
+        new smallDiamonds({
             position: {
                 x:905,
                 y:465
