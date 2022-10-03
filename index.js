@@ -174,12 +174,22 @@ function animate(){
     }
     // UI 
     // Enemies
-   /*  enemies.forEach(enemy =>{
+    /*  enemies.forEach(enemy =>{
         enemy.draw()
         enemy.update()
     }) */
     // Enemies
-    // 
+    //
+    //
+    if(player.liveStats.currentLives <= 0){
+        player.liveStats.currentLives = player.liveStats.maxLives;
+        player.scoreStats.amountDiamonds = 0
+        level = 1;
+        player.switchState('idleRight');
+        levels[level].init();
+    }
+
+    //
     player.handleInput(keys)
     player.draw()
     player.update()

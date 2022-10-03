@@ -1,4 +1,4 @@
-let level = 9  
+let level = 1  
 let levels = {
     1: {
         init: () => {
@@ -30,11 +30,12 @@ let levels = {
                 }),
             ]
     boxs = [
-        new Sprite({
+        new BoxSprite({
             position: {
-                x:500,
+                x:600,
                 y:355
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,
@@ -42,6 +43,18 @@ let levels = {
             autoplay: false,
                 }),
         new BoxSprite({
+            position: {
+                x:400,
+                y:205
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+        }),
+        new Sprite({
             position: {
                 x:300,
                 y:255
@@ -52,20 +65,8 @@ let levels = {
             frameBuffer: 1,
             loop: false,
             autoplay: false,
-                }),
-        new BoxSprite({
-            position: {
-                x:300,
-                y:205
-            },
-            collisionBlocks,
-            imageSrc: './img/boxfolder/idlebox.png',
-            frameRate: 1,
-            frameBuffer: 1,
-            loop: false,
-            autoplay: false,
-                }),
-            ]
+        }),
+    ]
     smallDiamonds = [
         new smallDiamond({
             position: {
@@ -325,11 +326,12 @@ let levels = {
                 }),
             ]
     boxs = [
-        new Sprite({
+        new BoxSprite({
             position: {
                 x:385,
                 y:415
             },
+            collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
             frameRate: 1,
             frameBuffer: 1,

@@ -115,9 +115,8 @@ draw(){
         if( 
             this.position.y >= canvas.height 
             && this.liveStats.currentLives >= this.liveStats.minLives 
-            
             ){
-                this.position.y = 0
+            this.position.y = 0
             this.liveStats.currentLives -=1
         }
         this.checkForPlayer()
