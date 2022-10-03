@@ -121,12 +121,14 @@ draw(){
             this.liveStats.currentLives -=1
         }
         this.checkForPlayer()
-        // WIP:OLD collisions - empty array -v
-        //console.log(this.boxs)
-        // WIP:OLD collisions - empty array -v
-        console.log(boxs)
-        
-        //console.log(levels)
+//Console.log UPDATE
+    // WIP:OLD collisions - empty array -v
+    //console.log(this.boxs)
+    //console.log(levels)
+    // WIP:OLD collisions - empty array -v
+    console.log(boxs)
+    //Console.log UPDATE
+
     } 
     handleInput(keys){
         if(this.nullifyInput) return
@@ -238,24 +240,24 @@ draw(){
             const collisionBox = boxs[i]
             // if collision happens
             if (
-                this.hitBox.position.x <= collisionBox.position.x + collisionBox.width
-                && this.hitBox.position.x +this.hitBox.width >= collisionBox.position.x
-                && this.hitBox.position.y + this.hitBox.height >= collisionBox.position.y
-                && this.hitBox.position.y <= collisionBox.position.y + collisionBox.height
+                this.hitBox.position.x <= collisionBox.hitBox.position.x + collisionBox.hitBox.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBox.hitBox.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBox.hitBox.position.y
+                && this.hitBox.position.y <= collisionBox.hitBox.position.y + collisionBox.hitBox.height
             ) {
         console.log('Horizontal Collision')
                 // horizontal x axis collision player and sprite
                 if (this.velocity.x < -0) {
                     const offset = this.hitBox.position.x - this.position.x
-                    this.position.x = collisionBox.position.x + collisionBox.width - offset + 0.01
-        console.log('Right collision Player')
+                    this.position.x = collisionBox.hitBox.position.x + collisionBox.hitBox.width - offset + 0.01
+        console.log('Right X collision Player')
                     break
                 }
                 
                 if (this.velocity.x > 0) {
                     const offset = this.hitBox.position.x - this.position.x + this.hitBox.width
-                    this.position.x = collisionBox.position.x - offset - 0.01
-                    console.log('Left collision Player')
+                    this.position.x = collisionBox.hitBox.position.x - offset - 0.01
+                    console.log('Left X collision Player')
                     break
                         }
                     }

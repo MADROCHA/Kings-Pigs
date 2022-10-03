@@ -3,8 +3,8 @@ class ObjectMap  {
         {position,
         animations, 
         imageSrc = './img/livesAndCoins/bigDiamondIdle.png',
-        frameRate = 10,
-        frameBuffer = 7,
+        frameRate = 1,
+        frameBuffer = 1,
         loop = true,
         autoplay = true,
         collisionBlocks = [],}) {
@@ -80,6 +80,7 @@ update(){
     this.updateHitbox()
     this.checkForHorizontalCollisions()
     this.applyWeight()
+    this.updateFrames()
     this.updateHitbox()
     if(!ui.debug){
         c.strokeStyle = 'gold'
@@ -205,8 +206,8 @@ class BoxSprite extends ObjectMap {
         {position,
         animations, 
         imageSrc = './img/boxfolder/idlebox.png',
-        frameRate = 1,
-        frameBuffer = 1,
+        frameRate ,
+        frameBuffer ,
         loop = true,
         autoplay = true,
         collisionBlocks = [],
@@ -247,6 +248,7 @@ class BoxSprite extends ObjectMap {
     this.updateHitbox()
     this.checkForHorizontalCollisions()
     this.applyWeight()
+    this.updateFrames()
     this.updateHitbox()
     if(!ui.debug){
         c.strokeStyle = 'gold'

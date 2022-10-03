@@ -1,4 +1,4 @@
-let level = 1  
+let level = 9  
 let levels = {
     1: {
         init: () => {
@@ -623,6 +623,128 @@ let levels = {
             
                 }),
             ]
+        }
+    },
+    9: {
+        init: () => {
+            parsedCollisions = collisionsLevel9.parse2D()
+            collisionBlocks = parsedCollisions.createObjectsFrom2D()
+            player.collisionBlocks = collisionBlocks,
+            player.position.x = 15
+            player.position.y = 420
+            if (player.currentAnimation) player.currentAnimation.isActive = false
+            background = new Sprite({
+    position: {
+        x:0,
+        y:0,
+    },
+    imageSrc: './img/backgroundLevelsFolder/backgroundLevel9.png',
+    })
+    doors = [
+
+    ]
+    boxs = [
+        new BoxSprite({
+            collisionBlocks,
+            position: {
+                x:230,
+                y:100
+            },
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: true,
+            autoplay: true,
+        }),
+    ]
+    smallDiamonds = [ 
+        new smallDiamond({
+            position: {
+            x:525,
+            //y:465
+            y:280
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+        }),
+            new smallDiamond({
+            position: {
+            x:650,
+            //y:400
+            y:215
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+        }),
+        new smallDiamond({
+            position: {
+            x:775,
+            //y:335
+            y:150
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+                }),
+        new smallDiamond({
+            position: {
+            x:650,
+            //y:465
+            y:465
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+        }),
+            new smallDiamond({
+            position: {
+            x:775,
+            //y:400
+            y:400
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+        }),
+        new smallDiamond({
+            position: {
+            x:905,
+            //y:335
+            y:335
+            },
+            /* */            
+            imageSrc: './img/livesAndCoins/bigDiamondIdle.png',
+            //imageSrc: 'img/enemies/Pig/Idle(34x28).png',
+            frameRate: 10,
+            frameBuffer: 7,
+            loop: true,
+            autoplay: true, 
+            
+                }),
+    ]
         }
     }
 }
