@@ -1,4 +1,4 @@
-let level = 1  
+let level = 1;  
 let levels = {
     1: {
         init: () => {
@@ -54,7 +54,7 @@ let levels = {
             loop: false,
             autoplay: false,
         }),
-        new Sprite({
+        /* new Sprite({
             position: {
                 x:300,
                 y:255
@@ -65,7 +65,7 @@ let levels = {
             frameBuffer: 1,
             loop: false,
             autoplay: false,
-        }),
+        }), */
     ]
     smallDiamonds = [
         new smallDiamond({

@@ -93,15 +93,20 @@ draw(){
         this.position.x += this.velocity.x
         this.updateHitbox()
         this.checkForHorizontalCollisions() 
+        //this.checkForPlayerX()
+        this.checkForX()
         //vertical collisions
+        
+        
         this.applyGravity()
-
         this.updateHitbox()
+        this.checkForY()
         if(!ui.debug){
             c.strokeStyle = 'white'
             c.strokeRect(this.hitBox.position.x, this.hitBox.position.y, this.hitBox.width, this.hitBox.height)
         }
         this.checkForVerticalCollisions()
+        //this.checkForPlayerY()
         
     //OLD_ above canvas bottom; aka: value'height'
         //this.sides.bottom = this.position.y + this.height
@@ -119,7 +124,6 @@ draw(){
             this.position.y = 0
             this.liveStats.currentLives -=1
         }
-        this.checkForPlayer()
 //Console.log UPDATE
     // WIP:OLD collisions - empty array -v
     //console.log(this.boxs)
@@ -234,15 +238,68 @@ draw(){
             }
         }
     }
-    checkForPlayer (){
+    checkForX (){
+        for (let i = 0; i < boxs.length; i++){
+            const collisionBlock = boxs[i]
+            // if collision happens
+            if (
+                this.hitBox.position.x <= collisionBlock.position.x + collisionBlock.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBlock.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBlock.position.y
+                && this.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height
+            ) {
+                // horizontal x axis collision player and sprite
+                if (this.velocity.x < -0) {
+                    const offset = this.hitBox.position.x - this.position.x
+                    this.position.x = collisionBlock.position.x + collisionBlock.width - offset + 0.01
+                    break
+                }
+                
+                if (this.velocity.x > 0) {
+                    const offset = this.hitBox.position.x - this.position.x + this.hitBox.width
+                    this.position.x = collisionBlock.position.x - offset - 0.01
+                    break
+                }
+            }
+        }
+    }
+        checkForY(){
+            for (let i = 0; i < boxs.length; i++){
+                const collisionBlock = boxs[i]
+                // if collision happens
+                if (
+                    this.hitBox.position.x <= collisionBlock.position.x + collisionBlock.width
+                    && this.hitBox.position.x +this.hitBox.width >= collisionBlock.position.x
+                    && this.hitBox.position.y + this.hitBox.height >= collisionBlock.position.y
+                    && this.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height
+                ) {
+                    // vertical y axis collision player and sprite
+                    if (this.velocity.y < -0) {
+                        this.velocity.y = 0
+                        const offset = this.hitBox.position.y - this.position.y 
+                        this.position.y = collisionBlock.position.y + collisionBlock.height - offset + 0.01
+                        break
+                    }
+    
+                    if (this.velocity.y > 0) {
+                        this.velocity.y = 0
+                        const offset = this.hitBox.position.y - this.position.y + this.hitBox.height
+                        this.position.y = collisionBlock.position.y - offset - 0.01
+                        break
+                    }
+                }
+            }
+        }
+            // v. 1
+/*     checkForPlayerX (){
         for (let i = 0; i < boxs.length; i++){
             const collisionBox = boxs[i]
             // if collision happens
             if (
-                this.hitBox.position.x <= collisionBox.hitBox.position.x + collisionBox.hitBox.width
-                && this.hitBox.position.x +this.hitBox.width >= collisionBox.hitBox.position.x
-                && this.hitBox.position.y + this.hitBox.height >= collisionBox.hitBox.position.y
-                && this.hitBox.position.y <= collisionBox.hitBox.position.y + collisionBox.hitBox.height
+                this.hitBox.position.x <= collisionBox.position.x + collisionBox.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBox.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBox.position.y
+                && this.hitBox.position.y <= collisionBox.position.y + collisionBox.height
             ) {
         console.log('Horizontal Collision')
                 // horizontal x axis collision player and sprite
@@ -262,4 +319,34 @@ draw(){
                     }
                 }
             } 
+    checkForPlayerY (){
+        for (let i = 0; i < boxs.length; i++){
+            const collisionBox = boxs[i]
+            // if collision happens
+            if (
+                this.hitBox.position.x <= collisionBox.position.x + collisionBox.width
+                && this.hitBox.position.x +this.hitBox.width >= collisionBox.position.x
+                && this.hitBox.position.y + this.hitBox.height >= collisionBox.position.y
+                && this.hitBox.position.y <= collisionBox.position.y + collisionBox.height
+            ) {
+        console.log('Vertical Collision')
+                // horizontal x axis collision player and sprite
+                if (this.velocity.y < -0) {
+                    //this.velocity.y = 0
+                    const offset = this.hitBox.position.y - this.position.y
+                    this.position.y = collisionBox.hitBox.position.y + collisionBox.hitBox.height - offset + 0.01
+        console.log('1 Y collision Player')
+                    break
+                }
+                
+                if (this.velocity.y > 0) {
+                    //this.velocity.y = 0
+                    const offset = this.hitBox.position.y - this.position.y + this.hitBox.height
+                    this.position.y = collisionBox.hitBox.position.y - offset - 0.01
+                    console.log('2 Y collision Player')
+                    break
+                        }
+                    }
+                }
+            }  */
     }

@@ -39,6 +39,23 @@ window.addEventListener('keydown', (e) =>{
                     //keys.w.pressed = !keys.w.pressed
                 } 
             } 
+            for (let i = 0; i < boxs.length; i++){
+                const collisionBlock = boxs[i]
+            if ( 
+                player.velocity.y === 0 
+                &&
+                (player.hitBox.position.x <= collisionBlock.position.x + collisionBlock.width
+                && player.hitBox.position.x +player.hitBox.width >= collisionBlock.position.x
+                && player.hitBox.position.y + player.hitBox.height >= collisionBlock.position.y
+                && player.hitBox.position.y <= collisionBlock.position.y + collisionBlock.height)
+                //&& player.checkForVerticalCollisions()
+                //&& player.checkForVerticalCollisions()
+                ) {
+                    
+                    player.velocity.y = -14;
+                    //keys.w.pressed = !keys.w.pressed
+                } 
+            } 
             /* // JUMP 0.1B
             if ( 
                 player.velocity.y === 0 

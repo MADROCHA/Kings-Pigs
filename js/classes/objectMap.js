@@ -222,6 +222,11 @@ class BoxSprite extends ObjectMap {
             autoplay ,
             collisionBlocks,
         })
+        //
+        this.position = position;
+        this.width = 44;
+        this.height = 32;
+        //
         this.boxs = boxs
         this.hitBox = {
             position:{
