@@ -52,7 +52,7 @@ const player = new Player({
             loop: false,
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
-                console.log('completed animation')
+                //console.log('completed animation')
                 //overlay.opacity 0 1 
                 gsap.to(overlay, {
                     opacity: 1,
@@ -78,7 +78,7 @@ const player = new Player({
     },
 });
 
-
+//spaceBar = ''
 const keys = {
     w: {
         pressed:false
@@ -94,7 +94,7 @@ const keys = {
     },
     zero: {
         pressed:false
-    }
+    },
 }
 
 const ui = new UI()
@@ -137,7 +137,7 @@ function animate(){
     }) 
     */
 // OLD
-    console.log(player.scoreStats.amountDiamonds)
+    //console.log(player.scoreStats.amountDiamonds)
     //  
     background.draw()
     //  

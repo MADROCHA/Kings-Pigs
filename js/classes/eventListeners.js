@@ -3,7 +3,6 @@ window.addEventListener('keydown', (e) =>{
     if (player.nullifyInput) return
     switch (e.key) {
         case 'w':
-            //console.log('Preesed W')
             for (let i = 0; i < doors.length; i++) {
                 const door = doors[i]
                 if (
@@ -21,7 +20,9 @@ window.addEventListener('keydown', (e) =>{
                     return
                     }
                 
-            }
+            }               
+            //console.log('Preesed W')
+            
             for (let i = 0; i < player.collisionBlocks.length; i++){
                 const collisionBlock = player.collisionBlocks[i]
             if ( 

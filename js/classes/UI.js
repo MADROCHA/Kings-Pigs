@@ -97,7 +97,8 @@ class PlayerUI /* extends Sprite */ {
             }
             this.updateFrames()
             c.fillStyle = 'rgb(70,130,180)'
-            c.font = 20 +'px '+ 'Helvetica'; 
+            //c.fillStyle = 'rgb(70,130,180)'
+            c.font = 20 +'px '+ 'Impact'; 
             c.fillText(player.scoreStats.amountDiamonds, 50,70,800)
             // collision wip 0.1
             /*

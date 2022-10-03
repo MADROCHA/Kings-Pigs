@@ -50,7 +50,7 @@ class Player extends Sprite {
         }
         //this.width = 25;
         //this.height = 25;
-        this.gravity = 0.9,
+        this.gravity = 0.8,
         this.collisionBlocks = collisionBlocks
         //console.log(this.collisionBlocks)
         this.sides = {

@@ -1,4 +1,4 @@
-let level = 1;  
+let level = 7;  
 let levels = {
     1: {
         init: () => {
@@ -398,8 +398,20 @@ let levels = {
     boxs = [
         new BoxSprite({
             position: {
-                x:140,
-                y:285
+                x:220,
+                y:385
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+        new BoxSprite({
+            position: {
+                x:275,
+                y:385
             },
             collisionBlocks,
             imageSrc: './img/boxfolder/idlebox.png',
@@ -484,6 +496,18 @@ let levels = {
         new BoxSprite({
             position: {
                 x:845,
+                y:220
+            },
+            collisionBlocks,
+            imageSrc: './img/boxfolder/idlebox.png',
+            frameRate: 1,
+            frameBuffer: 1,
+            loop: false,
+            autoplay: false,
+                }),
+        new BoxSprite({
+            position: {
+                x:725,
                 y:220
             },
             collisionBlocks,
